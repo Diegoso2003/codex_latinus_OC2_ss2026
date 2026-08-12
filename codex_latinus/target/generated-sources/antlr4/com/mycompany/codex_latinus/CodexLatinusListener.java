@@ -308,15 +308,29 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 */
 	void exitStruct(CodexLatinusParser.StructContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CodexLatinusParser#l_atrib}.
+	 * Enter a parse tree produced by the {@code atrib_coma}
+	 * labeled alternative in {@link CodexLatinusParser#l_atrib}.
 	 * @param ctx the parse tree
 	 */
-	void enterL_atrib(CodexLatinusParser.L_atribContext ctx);
+	void enterAtrib_coma(CodexLatinusParser.Atrib_comaContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CodexLatinusParser#l_atrib}.
+	 * Exit a parse tree produced by the {@code atrib_coma}
+	 * labeled alternative in {@link CodexLatinusParser#l_atrib}.
 	 * @param ctx the parse tree
 	 */
-	void exitL_atrib(CodexLatinusParser.L_atribContext ctx);
+	void exitAtrib_coma(CodexLatinusParser.Atrib_comaContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code atrib_pcoma}
+	 * labeled alternative in {@link CodexLatinusParser#l_atrib}.
+	 * @param ctx the parse tree
+	 */
+	void enterAtrib_pcoma(CodexLatinusParser.Atrib_pcomaContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code atrib_pcoma}
+	 * labeled alternative in {@link CodexLatinusParser#l_atrib}.
+	 * @param ctx the parse tree
+	 */
+	void exitAtrib_pcoma(CodexLatinusParser.Atrib_pcomaContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CodexLatinusParser#atrib}.
 	 * @param ctx the parse tree
@@ -447,16 +461,6 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitUnario(CodexLatinusParser.UnarioContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link CodexLatinusParser#postf}.
-	 * @param ctx the parse tree
-	 */
-	void enterPostf(CodexLatinusParser.PostfContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CodexLatinusParser#postf}.
-	 * @param ctx the parse tree
-	 */
-	void exitPostf(CodexLatinusParser.PostfContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CodexLatinusParser#term}.
 	 * @param ctx the parse tree

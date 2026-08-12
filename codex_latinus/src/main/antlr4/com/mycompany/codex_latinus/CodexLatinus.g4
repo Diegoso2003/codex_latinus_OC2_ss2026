@@ -103,7 +103,8 @@ lectura : '<<'
     | expr '<<'
     ;
 
-asign : unario ';'
+asign : identi op=('++'|'--') ';'
+    | identi '=' expr ';'
     ;
 
 l_inst : (inst)+
@@ -138,8 +139,8 @@ l_val : l_val ',' ID ':' valor
 struct : ST ID '{' l_atrib '}' FN ';'
     ;
 
-l_atrib : atrib (',' atrib)*
-    | atrib ';' (atrib ';')*
+l_atrib : atrib (',' atrib)*        #atrib_coma
+    | (atrib ';')+                  #atrib_pcoma
     ;
 
 atrib : ta=(ES|SR) ID ':' tipo
@@ -191,11 +192,7 @@ mulDiv : mulDiv op=('*'|'/') unario
     | unario
     ;
 
-unario : op=('--'|'++'|'-'|'+'|'non') postf
-    | postf
-    ;
-
-postf : term ('++'|'--')
+unario : op=('-'|'+'|'non') term
     | term
     ;
 
@@ -204,7 +201,8 @@ term : INT
     | TEXT
     | CHAR
     | BOOL
-    | identi
+    | identi op=('++'|'--')?
+    | op=('++'|'--') identi
     | '(' expr ')'
     ;
 

@@ -228,7 +228,14 @@ public class CodexLatinusBaseVisitor<T> extends AbstractParseTreeVisitor<T> impl
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitL_atrib(CodexLatinusParser.L_atribContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAtrib_coma(CodexLatinusParser.Atrib_comaContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitAtrib_pcoma(CodexLatinusParser.Atrib_pcomaContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -320,13 +327,6 @@ public class CodexLatinusBaseVisitor<T> extends AbstractParseTreeVisitor<T> impl
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitUnario(CodexLatinusParser.UnarioContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitPostf(CodexLatinusParser.PostfContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

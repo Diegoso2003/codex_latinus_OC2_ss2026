@@ -191,11 +191,19 @@ public interface CodexLatinusVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStruct(CodexLatinusParser.StructContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CodexLatinusParser#l_atrib}.
+	 * Visit a parse tree produced by the {@code atrib_coma}
+	 * labeled alternative in {@link CodexLatinusParser#l_atrib}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitL_atrib(CodexLatinusParser.L_atribContext ctx);
+	T visitAtrib_coma(CodexLatinusParser.Atrib_comaContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code atrib_pcoma}
+	 * labeled alternative in {@link CodexLatinusParser#l_atrib}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAtrib_pcoma(CodexLatinusParser.Atrib_pcomaContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CodexLatinusParser#atrib}.
 	 * @param ctx the parse tree
@@ -274,12 +282,6 @@ public interface CodexLatinusVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitUnario(CodexLatinusParser.UnarioContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link CodexLatinusParser#postf}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPostf(CodexLatinusParser.PostfContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CodexLatinusParser#term}.
 	 * @param ctx the parse tree

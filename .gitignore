@@ -38,11 +38,17 @@ buildNumber.properties
 *.iws
 *.ipr
 .classpath
-.preject
+.factorypath
+.project
 .settings/
 bin/
 .vscode/
 .metadata/
+nbactions.xml
+nb-configuration.xml
+
+# form netbeans
+*.form
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*

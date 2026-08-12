@@ -377,13 +377,25 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterL_atrib(CodexLatinusParser.L_atribContext ctx) { }
+	@Override public void enterAtrib_coma(CodexLatinusParser.Atrib_comaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitL_atrib(CodexLatinusParser.L_atribContext ctx) { }
+	@Override public void exitAtrib_coma(CodexLatinusParser.Atrib_comaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAtrib_pcoma(CodexLatinusParser.Atrib_pcomaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAtrib_pcoma(CodexLatinusParser.Atrib_pcomaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -540,18 +552,6 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitUnario(CodexLatinusParser.UnarioContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterPostf(CodexLatinusParser.PostfContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitPostf(CodexLatinusParser.PostfContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

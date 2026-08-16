@@ -1,5 +1,5 @@
-// Generated from com/mycompany/codex_latinus/CodexLatinus.g4 by ANTLR 4.13.2
-package com.mycompany.codex_latinus;
+// Generated from com/mycompany/antlr4/CodexLatinus.g4 by ANTLR 4.13.2
+package com.mycompany.antlr4;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -38,6 +38,16 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 */
 	void exitL_decl(CodexLatinusParser.L_declContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CodexLatinusParser#decl}.
+	 * @param ctx the parse tree
+	 */
+	void enterDecl(CodexLatinusParser.DeclContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CodexLatinusParser#decl}.
+	 * @param ctx the parse tree
+	 */
+	void exitDecl(CodexLatinusParser.DeclContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CodexLatinusParser#functs}.
 	 * @param ctx the parse tree
 	 */
@@ -58,6 +68,16 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 */
 	void exitL_met(CodexLatinusParser.L_metContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CodexLatinusParser#met}.
+	 * @param ctx the parse tree
+	 */
+	void enterMet(CodexLatinusParser.MetContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CodexLatinusParser#met}.
+	 * @param ctx the parse tree
+	 */
+	void exitMet(CodexLatinusParser.MetContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CodexLatinusParser#main}.
 	 * @param ctx the parse tree
 	 */
@@ -68,25 +88,39 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 */
 	void exitMain(CodexLatinusParser.MainContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CodexLatinusParser#decl}.
+	 * Enter a parse tree produced by {@link CodexLatinusParser#l_inst}.
 	 * @param ctx the parse tree
 	 */
-	void enterDecl(CodexLatinusParser.DeclContext ctx);
+	void enterL_inst(CodexLatinusParser.L_instContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CodexLatinusParser#decl}.
+	 * Exit a parse tree produced by {@link CodexLatinusParser#l_inst}.
 	 * @param ctx the parse tree
 	 */
-	void exitDecl(CodexLatinusParser.DeclContext ctx);
+	void exitL_inst(CodexLatinusParser.L_instContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CodexLatinusParser#t}.
+	 * Enter a parse tree produced by the {@code primitivo}
+	 * labeled alternative in {@link CodexLatinusParser#declS}.
 	 * @param ctx the parse tree
 	 */
-	void enterT(CodexLatinusParser.TContext ctx);
+	void enterPrimitivo(CodexLatinusParser.PrimitivoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CodexLatinusParser#t}.
+	 * Exit a parse tree produced by the {@code primitivo}
+	 * labeled alternative in {@link CodexLatinusParser#declS}.
 	 * @param ctx the parse tree
 	 */
-	void exitT(CodexLatinusParser.TContext ctx);
+	void exitPrimitivo(CodexLatinusParser.PrimitivoContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code arreglo}
+	 * labeled alternative in {@link CodexLatinusParser#declS}.
+	 * @param ctx the parse tree
+	 */
+	void enterArreglo(CodexLatinusParser.ArregloContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code arreglo}
+	 * labeled alternative in {@link CodexLatinusParser#declS}.
+	 * @param ctx the parse tree
+	 */
+	void exitArreglo(CodexLatinusParser.ArregloContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CodexLatinusParser#condi}.
 	 * @param ctx the parse tree
@@ -127,6 +161,16 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCicloS(CodexLatinusParser.CicloSContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CodexLatinusParser#bloque}.
+	 * @param ctx the parse tree
+	 */
+	void enterBloque(CodexLatinusParser.BloqueContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CodexLatinusParser#bloque}.
+	 * @param ctx the parse tree
+	 */
+	void exitBloque(CodexLatinusParser.BloqueContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CodexLatinusParser#cicloD}.
 	 * @param ctx the parse tree
@@ -208,16 +252,6 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 */
 	void exitAsign(CodexLatinusParser.AsignContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CodexLatinusParser#l_inst}.
-	 * @param ctx the parse tree
-	 */
-	void enterL_inst(CodexLatinusParser.L_instContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CodexLatinusParser#l_inst}.
-	 * @param ctx the parse tree
-	 */
-	void exitL_inst(CodexLatinusParser.L_instContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link CodexLatinusParser#metodo}.
 	 * @param ctx the parse tree
 	 */
@@ -268,16 +302,6 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 */
 	void exitVariables(CodexLatinusParser.VariablesContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CodexLatinusParser#l_var}.
-	 * @param ctx the parse tree
-	 */
-	void enterL_var(CodexLatinusParser.L_varContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CodexLatinusParser#l_var}.
-	 * @param ctx the parse tree
-	 */
-	void exitL_var(CodexLatinusParser.L_varContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link CodexLatinusParser#declStru}.
 	 * @param ctx the parse tree
 	 */
@@ -298,6 +322,16 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 */
 	void exitL_val(CodexLatinusParser.L_valContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CodexLatinusParser#val}.
+	 * @param ctx the parse tree
+	 */
+	void enterVal(CodexLatinusParser.ValContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CodexLatinusParser#val}.
+	 * @param ctx the parse tree
+	 */
+	void exitVal(CodexLatinusParser.ValContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CodexLatinusParser#struct}.
 	 * @param ctx the parse tree
 	 */
@@ -308,26 +342,36 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 */
 	void exitStruct(CodexLatinusParser.StructContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code atrib_coma}
+	 * Enter a parse tree produced by the {@code LAtribComa}
 	 * labeled alternative in {@link CodexLatinusParser#l_atrib}.
 	 * @param ctx the parse tree
 	 */
-	void enterAtrib_coma(CodexLatinusParser.Atrib_comaContext ctx);
+	void enterLAtribComa(CodexLatinusParser.LAtribComaContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code atrib_coma}
+	 * Exit a parse tree produced by the {@code LAtribComa}
 	 * labeled alternative in {@link CodexLatinusParser#l_atrib}.
 	 * @param ctx the parse tree
 	 */
-	void exitAtrib_coma(CodexLatinusParser.Atrib_comaContext ctx);
+	void exitLAtribComa(CodexLatinusParser.LAtribComaContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code atrib_pcoma}
+	 * Enter a parse tree produced by the {@code LAtribPcoma}
 	 * labeled alternative in {@link CodexLatinusParser#l_atrib}.
+	 * @param ctx the parse tree
+	 */
+	void enterLAtribPcoma(CodexLatinusParser.LAtribPcomaContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code LAtribPcoma}
+	 * labeled alternative in {@link CodexLatinusParser#l_atrib}.
+	 * @param ctx the parse tree
+	 */
+	void exitLAtribPcoma(CodexLatinusParser.LAtribPcomaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CodexLatinusParser#atrib_pcoma}.
 	 * @param ctx the parse tree
 	 */
 	void enterAtrib_pcoma(CodexLatinusParser.Atrib_pcomaContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code atrib_pcoma}
-	 * labeled alternative in {@link CodexLatinusParser#l_atrib}.
+	 * Exit a parse tree produced by {@link CodexLatinusParser#atrib_pcoma}.
 	 * @param ctx the parse tree
 	 */
 	void exitAtrib_pcoma(CodexLatinusParser.Atrib_pcomaContext ctx);
@@ -352,16 +396,6 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 */
 	void exitLista(CodexLatinusParser.ListaContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CodexLatinusParser#cont}.
-	 * @param ctx the parse tree
-	 */
-	void enterCont(CodexLatinusParser.ContContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CodexLatinusParser#cont}.
-	 * @param ctx the parse tree
-	 */
-	void exitCont(CodexLatinusParser.ContContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link CodexLatinusParser#l_exp}.
 	 * @param ctx the parse tree
 	 */
@@ -371,16 +405,6 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitL_exp(CodexLatinusParser.L_expContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link CodexLatinusParser#arreg}.
-	 * @param ctx the parse tree
-	 */
-	void enterArreg(CodexLatinusParser.ArregContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CodexLatinusParser#arreg}.
-	 * @param ctx the parse tree
-	 */
-	void exitArreg(CodexLatinusParser.ArregContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CodexLatinusParser#tipo}.
 	 * @param ctx the parse tree

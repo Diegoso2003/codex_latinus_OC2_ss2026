@@ -4,10 +4,24 @@
  */
 package com.mycompany.pila;
 
+import com.mycompany.frontend.PilaFrontend;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
 /**
  *
  * @author rafael-cayax
  */
+@Getter
+@Setter
+@RequiredArgsConstructor
 public abstract class AccionPila {
-    
+    protected final Elemento eleApilar;
+    protected int longitudLog;
+
+    public abstract void apilar(PilaFrontend pila);
+
+    public abstract void desapilar(PilaFrontend pila);
 }

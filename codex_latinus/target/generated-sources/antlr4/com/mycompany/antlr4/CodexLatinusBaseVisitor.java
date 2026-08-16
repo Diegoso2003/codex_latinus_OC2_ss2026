@@ -1,5 +1,5 @@
-// Generated from com/mycompany/codex_latinus/CodexLatinus.g4 by ANTLR 4.13.2
-package com.mycompany.codex_latinus;
+// Generated from com/mycompany/antlr4/CodexLatinus.g4 by ANTLR 4.13.2
+package com.mycompany.antlr4;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -39,6 +39,13 @@ public class CodexLatinusBaseVisitor<T> extends AbstractParseTreeVisitor<T> impl
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitDecl(CodexLatinusParser.DeclContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitFuncts(CodexLatinusParser.FunctsContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -53,6 +60,13 @@ public class CodexLatinusBaseVisitor<T> extends AbstractParseTreeVisitor<T> impl
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitMet(CodexLatinusParser.MetContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitMain(CodexLatinusParser.MainContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -60,14 +74,21 @@ public class CodexLatinusBaseVisitor<T> extends AbstractParseTreeVisitor<T> impl
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitDecl(CodexLatinusParser.DeclContext ctx) { return visitChildren(ctx); }
+	@Override public T visitL_inst(CodexLatinusParser.L_instContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitT(CodexLatinusParser.TContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPrimitivo(CodexLatinusParser.PrimitivoContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitArreglo(CodexLatinusParser.ArregloContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -96,6 +117,13 @@ public class CodexLatinusBaseVisitor<T> extends AbstractParseTreeVisitor<T> impl
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitCicloS(CodexLatinusParser.CicloSContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitBloque(CodexLatinusParser.BloqueContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -158,13 +186,6 @@ public class CodexLatinusBaseVisitor<T> extends AbstractParseTreeVisitor<T> impl
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitL_inst(CodexLatinusParser.L_instContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitMetodo(CodexLatinusParser.MetodoContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -200,13 +221,6 @@ public class CodexLatinusBaseVisitor<T> extends AbstractParseTreeVisitor<T> impl
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitL_var(CodexLatinusParser.L_varContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitDeclStru(CodexLatinusParser.DeclStruContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -221,6 +235,13 @@ public class CodexLatinusBaseVisitor<T> extends AbstractParseTreeVisitor<T> impl
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitVal(CodexLatinusParser.ValContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitStruct(CodexLatinusParser.StructContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -228,7 +249,14 @@ public class CodexLatinusBaseVisitor<T> extends AbstractParseTreeVisitor<T> impl
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAtrib_coma(CodexLatinusParser.Atrib_comaContext ctx) { return visitChildren(ctx); }
+	@Override public T visitLAtribComa(CodexLatinusParser.LAtribComaContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitLAtribPcoma(CodexLatinusParser.LAtribPcomaContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -256,21 +284,7 @@ public class CodexLatinusBaseVisitor<T> extends AbstractParseTreeVisitor<T> impl
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCont(CodexLatinusParser.ContContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitL_exp(CodexLatinusParser.L_expContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitArreg(CodexLatinusParser.ArregContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

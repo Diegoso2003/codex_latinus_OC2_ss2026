@@ -4,11 +4,23 @@
  */
 package com.mycompany.frontend;
 
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
+
+import com.mycompany.antlr4.CodexLatinusLexer;
+import com.mycompany.antlr4.CodexLatinusParser;
+import com.mycompany.antlr4.CodexLatinusParser.ProgContext;
+import com.mycompany.pila.listener.PilaListener;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
+
 /**
  *
  * @author rafael-cayax
  */
 public class LatinusIDE extends javax.swing.JFrame {
+    private PilaFrontend pila = null;
+    private ProgContext arbol = null;
+    private final TextLineNumber numeros;
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger
             .getLogger(LatinusIDE.class.getName());
@@ -18,6 +30,8 @@ public class LatinusIDE extends javax.swing.JFrame {
      */
     public LatinusIDE() {
         initComponents();
+        numeros = new TextLineNumber(editor);
+        jScrollPane1.setRowHeaderView(numeros);
     }
 
     /**
@@ -28,7 +42,9 @@ public class LatinusIDE extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
@@ -47,7 +63,7 @@ public class LatinusIDE extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        pilaVista = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Codex latinus");
@@ -106,16 +122,17 @@ public class LatinusIDE extends javax.swing.JFrame {
         jMenu2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
 
         jMenuItem4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jMenuItem4.setText("Grafica AST");
+        jMenuItem4.setText("AST");
         jMenu2.add(jMenuItem4);
 
         jMenuItem5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jMenuItem5.setText("Grafica tabla de simbolos");
+        jMenuItem5.setText("Tabla de simbolos");
         jMenu2.add(jMenuItem5);
 
-        jMenuItem6.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jMenuItem6.setText("Grafica pila de procesos");
-        jMenu2.add(jMenuItem6);
+        pilaVista.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        pilaVista.setText("Pila de procesos");
+        pilaVista.addActionListener(this::pilaVistaActionPerformed);
+        jMenu2.add(pilaVista);
 
         jMenuBar1.add(jMenu2);
 
@@ -124,7 +141,18 @@ public class LatinusIDE extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void editorCaretUpdate(javax.swing.event.CaretEvent evt) {// GEN-FIRST:event_editorCaretUpdate
+    private void pilaVistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilaVistaActionPerformed
+        if (pila != null)
+            pila.dispose();
+        armarArbol();
+        var listener = new PilaListener();
+        ParseTreeWalker.DEFAULT.walk(listener, arbol);
+        pila = new PilaFrontend(this, false, listener.getPila());
+        pila.setLocationRelativeTo(this);
+        pila.setVisible(true);
+    }//GEN-LAST:event_pilaVistaActionPerformed
+
+    private void editorCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_editorCaretUpdate
         try {
             int pos = editor.getCaretPosition();
             var inter = editor.getDocument().getDefaultRootElement();
@@ -136,7 +164,14 @@ public class LatinusIDE extends javax.swing.JFrame {
             linea.setText("--");
             columna.setText("--");
         }
-    }// GEN-LAST:event_editorCaretUpdate
+    }//GEN-LAST:event_editorCaretUpdate
+
+    private void armarArbol() {
+        var lexer = new CodexLatinusLexer(CharStreams.fromString(editor.getText()));
+        var tokens = new CommonTokenStream(lexer);
+        var parser = new CodexLatinusParser(tokens);
+        arbol = parser.prog();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel columna;
@@ -151,9 +186,9 @@ public class LatinusIDE extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel linea;
+    private javax.swing.JMenuItem pilaVista;
     // End of variables declaration//GEN-END:variables
 }

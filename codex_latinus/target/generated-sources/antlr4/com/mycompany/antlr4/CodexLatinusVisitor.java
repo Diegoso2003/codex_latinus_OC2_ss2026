@@ -1,5 +1,5 @@
-// Generated from com/mycompany/codex_latinus/CodexLatinus.g4 by ANTLR 4.13.2
-package com.mycompany.codex_latinus;
+// Generated from com/mycompany/antlr4/CodexLatinus.g4 by ANTLR 4.13.2
+package com.mycompany.antlr4;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -29,6 +29,12 @@ public interface CodexLatinusVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitL_decl(CodexLatinusParser.L_declContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link CodexLatinusParser#decl}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDecl(CodexLatinusParser.DeclContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link CodexLatinusParser#functs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -41,23 +47,37 @@ public interface CodexLatinusVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitL_met(CodexLatinusParser.L_metContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link CodexLatinusParser#met}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMet(CodexLatinusParser.MetContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link CodexLatinusParser#main}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitMain(CodexLatinusParser.MainContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CodexLatinusParser#decl}.
+	 * Visit a parse tree produced by {@link CodexLatinusParser#l_inst}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDecl(CodexLatinusParser.DeclContext ctx);
+	T visitL_inst(CodexLatinusParser.L_instContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CodexLatinusParser#t}.
+	 * Visit a parse tree produced by the {@code primitivo}
+	 * labeled alternative in {@link CodexLatinusParser#declS}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitT(CodexLatinusParser.TContext ctx);
+	T visitPrimitivo(CodexLatinusParser.PrimitivoContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code arreglo}
+	 * labeled alternative in {@link CodexLatinusParser#declS}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArreglo(CodexLatinusParser.ArregloContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CodexLatinusParser#condi}.
 	 * @param ctx the parse tree
@@ -82,6 +102,12 @@ public interface CodexLatinusVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitCicloS(CodexLatinusParser.CicloSContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link CodexLatinusParser#bloque}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBloque(CodexLatinusParser.BloqueContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CodexLatinusParser#cicloD}.
 	 * @param ctx the parse tree
@@ -131,12 +157,6 @@ public interface CodexLatinusVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAsign(CodexLatinusParser.AsignContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CodexLatinusParser#l_inst}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitL_inst(CodexLatinusParser.L_instContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link CodexLatinusParser#metodo}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -167,12 +187,6 @@ public interface CodexLatinusVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitVariables(CodexLatinusParser.VariablesContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CodexLatinusParser#l_var}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitL_var(CodexLatinusParser.L_varContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link CodexLatinusParser#declStru}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -185,21 +199,33 @@ public interface CodexLatinusVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitL_val(CodexLatinusParser.L_valContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link CodexLatinusParser#val}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVal(CodexLatinusParser.ValContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link CodexLatinusParser#struct}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitStruct(CodexLatinusParser.StructContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code atrib_coma}
+	 * Visit a parse tree produced by the {@code LAtribComa}
 	 * labeled alternative in {@link CodexLatinusParser#l_atrib}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAtrib_coma(CodexLatinusParser.Atrib_comaContext ctx);
+	T visitLAtribComa(CodexLatinusParser.LAtribComaContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code atrib_pcoma}
+	 * Visit a parse tree produced by the {@code LAtribPcoma}
 	 * labeled alternative in {@link CodexLatinusParser#l_atrib}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLAtribPcoma(CodexLatinusParser.LAtribPcomaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link CodexLatinusParser#atrib_pcoma}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
@@ -217,23 +243,11 @@ public interface CodexLatinusVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitLista(CodexLatinusParser.ListaContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CodexLatinusParser#cont}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCont(CodexLatinusParser.ContContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link CodexLatinusParser#l_exp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitL_exp(CodexLatinusParser.L_expContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link CodexLatinusParser#arreg}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitArreg(CodexLatinusParser.ArregContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CodexLatinusParser#tipo}.
 	 * @param ctx the parse tree

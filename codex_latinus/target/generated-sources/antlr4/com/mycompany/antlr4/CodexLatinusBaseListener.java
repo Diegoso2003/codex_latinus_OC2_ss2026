@@ -1,5 +1,5 @@
-// Generated from com/mycompany/codex_latinus/CodexLatinus.g4 by ANTLR 4.13.2
-package com.mycompany.codex_latinus;
+// Generated from com/mycompany/antlr4/CodexLatinus.g4 by ANTLR 4.13.2
+package com.mycompany.antlr4;
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -53,6 +53,18 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterDecl(CodexLatinusParser.DeclContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDecl(CodexLatinusParser.DeclContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterFuncts(CodexLatinusParser.FunctsContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -77,6 +89,18 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterMet(CodexLatinusParser.MetContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMet(CodexLatinusParser.MetContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterMain(CodexLatinusParser.MainContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -89,25 +113,37 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDecl(CodexLatinusParser.DeclContext ctx) { }
+	@Override public void enterL_inst(CodexLatinusParser.L_instContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDecl(CodexLatinusParser.DeclContext ctx) { }
+	@Override public void exitL_inst(CodexLatinusParser.L_instContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterT(CodexLatinusParser.TContext ctx) { }
+	@Override public void enterPrimitivo(CodexLatinusParser.PrimitivoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitT(CodexLatinusParser.TContext ctx) { }
+	@Override public void exitPrimitivo(CodexLatinusParser.PrimitivoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArreglo(CodexLatinusParser.ArregloContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArreglo(CodexLatinusParser.ArregloContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -156,6 +192,18 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCicloS(CodexLatinusParser.CicloSContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBloque(CodexLatinusParser.BloqueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBloque(CodexLatinusParser.BloqueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -257,18 +305,6 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterL_inst(CodexLatinusParser.L_instContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitL_inst(CodexLatinusParser.L_instContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterMetodo(CodexLatinusParser.MetodoContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -329,18 +365,6 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterL_var(CodexLatinusParser.L_varContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitL_var(CodexLatinusParser.L_varContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterDeclStru(CodexLatinusParser.DeclStruContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -365,6 +389,18 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterVal(CodexLatinusParser.ValContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVal(CodexLatinusParser.ValContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterStruct(CodexLatinusParser.StructContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -377,13 +413,25 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtrib_coma(CodexLatinusParser.Atrib_comaContext ctx) { }
+	@Override public void enterLAtribComa(CodexLatinusParser.LAtribComaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtrib_coma(CodexLatinusParser.Atrib_comaContext ctx) { }
+	@Override public void exitLAtribComa(CodexLatinusParser.LAtribComaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLAtribPcoma(CodexLatinusParser.LAtribPcomaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLAtribPcoma(CodexLatinusParser.LAtribPcomaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -425,18 +473,6 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCont(CodexLatinusParser.ContContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitCont(CodexLatinusParser.ContContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterL_exp(CodexLatinusParser.L_expContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -444,18 +480,6 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitL_exp(CodexLatinusParser.L_expContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterArreg(CodexLatinusParser.ArregContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitArreg(CodexLatinusParser.ArregContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

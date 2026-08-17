@@ -57,3 +57,6 @@ replay_pid*
 # ANTLR generated files
 *.tokens
 *.interp
+
+# reportes
+reportes/

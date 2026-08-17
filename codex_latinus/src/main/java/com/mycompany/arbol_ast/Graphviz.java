@@ -23,7 +23,7 @@ public class Graphviz {
         try {
             out.write("graph AST {\n");
             out.write("    rankdir=TB;\n");
-            out.write("    ranksep=2.5;\n");
+            out.write("    ranksep=1;\n");
         } catch (IOException e) {
             throw new AstException();
         }

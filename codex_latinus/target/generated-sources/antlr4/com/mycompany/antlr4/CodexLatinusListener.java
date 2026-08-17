@@ -162,6 +162,16 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 */
 	void exitCicloS(CodexLatinusParser.CicloSContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CodexLatinusParser#paren_expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterParen_expr(CodexLatinusParser.Paren_exprContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CodexLatinusParser#paren_expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitParen_expr(CodexLatinusParser.Paren_exprContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CodexLatinusParser#bloque}.
 	 * @param ctx the parse tree
 	 */

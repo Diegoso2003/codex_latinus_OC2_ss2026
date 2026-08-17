@@ -103,6 +103,12 @@ public interface CodexLatinusVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCicloS(CodexLatinusParser.CicloSContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link CodexLatinusParser#paren_expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParen_expr(CodexLatinusParser.Paren_exprContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link CodexLatinusParser#bloque}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

@@ -49,6 +49,7 @@ import com.mycompany.antlr4.CodexLatinusParser.MenMayContext;
 import com.mycompany.antlr4.CodexLatinusParser.MetContext;
 import com.mycompany.antlr4.CodexLatinusParser.MetodoContext;
 import com.mycompany.antlr4.CodexLatinusParser.MulDivContext;
+import com.mycompany.antlr4.CodexLatinusParser.Paren_exprContext;
 import com.mycompany.antlr4.CodexLatinusParser.PrimitivoContext;
 import com.mycompany.antlr4.CodexLatinusParser.ProgContext;
 import com.mycompany.antlr4.CodexLatinusParser.SinoContext;
@@ -388,7 +389,7 @@ public class PilaListener extends CodexLatinusBaseListener {
 
     @Override
     public void exitVal(ValContext ctx) {
-        agregarALaPila(NoTerminales.VALOR_S, ctx.getChildCount());
+        agregarALaPila(NoTerminales.VALOR, ctx.getChildCount());
         int hijos = primerVal ? 1 : 3;
         primerVal = false;
         agregarALaPila(NoTerminales.L_VAL, hijos);
@@ -397,6 +398,11 @@ public class PilaListener extends CodexLatinusBaseListener {
     @Override
     public void exitAccess_a(Access_aContext ctx) {
         agregarALaPila(NoTerminales.ACCESS_A, ctx.getChildCount());
+    }
+
+    @Override
+    public void exitParen_expr(Paren_exprContext ctx) {
+        agregarALaPila(NoTerminales.PAREN_EXPR, ctx.getChildCount());
     }
 
     private void agregarALaPila(String simbolo, int hijos) {

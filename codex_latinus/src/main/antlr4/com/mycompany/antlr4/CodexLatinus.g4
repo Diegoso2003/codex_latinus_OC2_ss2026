@@ -95,10 +95,10 @@ declS : ES ID DPUN tipo comple?                     #primitivo
     | SR ID access_a DPUN tipo lista PCO      #arreglo
     ;
 
-condi : SI PAA expr PAC bloque sino
+condi : SI paren_expr bloque sino
     ;
 
-sino : AT PAA expr PAC bloque sino
+sino : AT paren_expr bloque sino
     | default
     ;
 
@@ -106,13 +106,16 @@ default : AT bloque FN PCO
     | FN PCO
     ;
 
-cicloS : DUM PAA expr PAC bloque FN PCO
+cicloS : DUM paren_expr bloque FN PCO
+    ;
+
+paren_expr : PAA expr PAC
     ;
 
 bloque : LLAA l_inst? LLAC
     ;
 
-cicloD : FC bloque DUM PAA expr PAC PCO
+cicloD : FC bloque DUM paren_expr PCO
     ;
 
 cicloP : PER PAA declS expr PCO asign PAC bloque
@@ -240,7 +243,7 @@ term : INT
     | FALSUS
     | identi (INCRE|DECRE)?
     | (INCRE|DECRE) identi
-    | PAA expr PAC
+    | paren_expr
     ;
 
 identi : ID

@@ -38,6 +38,7 @@ public interface NoTerminales {
     String L_VAL = "Lval";
     String MAIN = "Main";
     String METODO = "Metodo";
+    String PAREN_EXPR = "ParenExpr";
     String PROG = "Prog";
     String RELACION = "Relac";
     String SINO = "Sino";

@@ -624,6 +624,18 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitLl_func(CodexLatinusParser.Ll_funcContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAccess_a(CodexLatinusParser.Access_aContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAccess_a(CodexLatinusParser.Access_aContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

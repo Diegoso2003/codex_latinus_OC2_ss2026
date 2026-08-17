@@ -320,4 +320,10 @@ public interface CodexLatinusVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitLl_func(CodexLatinusParser.Ll_funcContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link CodexLatinusParser#access_a}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAccess_a(CodexLatinusParser.Access_aContext ctx);
 }

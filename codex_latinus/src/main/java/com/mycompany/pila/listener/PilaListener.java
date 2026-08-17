@@ -9,6 +9,7 @@ import java.util.ArrayDeque;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 import com.mycompany.antlr4.CodexLatinusBaseListener;
+import com.mycompany.antlr4.CodexLatinusParser.Access_aContext;
 import com.mycompany.antlr4.CodexLatinusParser.AndContext;
 import com.mycompany.antlr4.CodexLatinusParser.ArregloContext;
 import com.mycompany.antlr4.CodexLatinusParser.AsignContext;
@@ -391,6 +392,11 @@ public class PilaListener extends CodexLatinusBaseListener {
         int hijos = primerVal ? 1 : 3;
         primerVal = false;
         agregarALaPila(NoTerminales.L_VAL, hijos);
+    }
+
+    @Override
+    public void exitAccess_a(Access_aContext ctx) {
+        agregarALaPila(NoTerminales.ACCESS_A, ctx.getChildCount());
     }
 
     private void agregarALaPila(String simbolo, int hijos) {

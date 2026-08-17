@@ -525,4 +525,14 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitLl_func(CodexLatinusParser.Ll_funcContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CodexLatinusParser#access_a}.
+	 * @param ctx the parse tree
+	 */
+	void enterAccess_a(CodexLatinusParser.Access_aContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CodexLatinusParser#access_a}.
+	 * @param ctx the parse tree
+	 */
+	void exitAccess_a(CodexLatinusParser.Access_aContext ctx);
 }

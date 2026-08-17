@@ -369,4 +369,11 @@ public class CodexLatinusBaseVisitor<T> extends AbstractParseTreeVisitor<T> impl
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitLl_func(CodexLatinusParser.Ll_funcContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitAccess_a(CodexLatinusParser.Access_aContext ctx) { return visitChildren(ctx); }
 }

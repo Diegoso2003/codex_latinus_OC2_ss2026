@@ -92,7 +92,7 @@ l_inst : inst+
     ;
 
 declS : ES ID DPUN tipo comple?                     #primitivo
-    | SR ID CORA expr CORC DPUN tipo lista PCO      #arreglo
+    | SR ID access_a DPUN tipo lista PCO      #arreglo
     ;
 
 condi : SI PAA expr PAC bloque sino
@@ -248,10 +248,12 @@ identi : ID
     | ll_func
     ;
 
-c_identi : CORA expr CORC
+c_identi : access_a
     | PUN ID
     ;
 
 ll_func : ID PAA l_exp? PAC
     ;
 
+access_a : CORA expr CORC
+    ;

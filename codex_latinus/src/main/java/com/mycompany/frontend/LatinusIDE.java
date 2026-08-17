@@ -10,7 +10,11 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import com.mycompany.antlr4.CodexLatinusLexer;
 import com.mycompany.antlr4.CodexLatinusParser;
 import com.mycompany.antlr4.CodexLatinusParser.ProgContext;
+import com.mycompany.arbol_ast.ArbolAst;
+import com.mycompany.exceptions.AstException;
+import com.mycompany.exceptions.DesktopException;
 import com.mycompany.pila.listener.PilaListener;
+import javax.swing.JOptionPane;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 /**
@@ -44,7 +48,7 @@ public class LatinusIDE extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
@@ -61,7 +65,7 @@ public class LatinusIDE extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        astVista = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         pilaVista = new javax.swing.JMenuItem();
 
@@ -121,9 +125,10 @@ public class LatinusIDE extends javax.swing.JFrame {
         jMenu2.setText("Graficas");
         jMenu2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
 
-        jMenuItem4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jMenuItem4.setText("AST");
-        jMenu2.add(jMenuItem4);
+        astVista.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        astVista.setText("AST");
+        astVista.addActionListener(this::astVistaActionPerformed);
+        jMenu2.add(astVista);
 
         jMenuItem5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jMenuItem5.setText("Tabla de simbolos");
@@ -166,6 +171,21 @@ public class LatinusIDE extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_editorCaretUpdate
 
+    private void astVistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_astVistaActionPerformed
+        try {
+            armarArbol();
+            var ast = new ArbolAst();
+            ast.crearArbol(arbol);
+        } catch (AstException e) {
+            JOptionPane.showMessageDialog(this, 
+                    "Error al graficar el arbol intente mas tarde",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (DesktopException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_astVistaActionPerformed
+
     private void armarArbol() {
         var lexer = new CodexLatinusLexer(CharStreams.fromString(editor.getText()));
         var tokens = new CommonTokenStream(lexer);
@@ -174,6 +194,7 @@ public class LatinusIDE extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem astVista;
     private javax.swing.JLabel columna;
     private javax.swing.JTextPane editor;
     private javax.swing.JLabel jLabel1;
@@ -184,7 +205,6 @@ public class LatinusIDE extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

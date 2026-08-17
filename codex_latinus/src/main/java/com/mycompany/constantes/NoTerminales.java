@@ -1,6 +1,7 @@
 package com.mycompany.constantes;
 
 public interface NoTerminales {
+    String ACCESS_A = "AccesA";
     String AND = "And";
     String ARITME = "Aritme";
     String ARREGLO = "Arreg";

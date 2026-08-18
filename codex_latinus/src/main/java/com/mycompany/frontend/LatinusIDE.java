@@ -13,6 +13,7 @@ import com.mycompany.antlr4.CodexLatinusParser.ProgContext;
 import com.mycompany.arbol_ast.ArbolAst;
 import com.mycompany.exceptions.AstException;
 import com.mycompany.exceptions.DesktopException;
+import com.mycompany.frontend.color.Coloreador;
 import com.mycompany.pila.listener.PilaListener;
 import javax.swing.JOptionPane;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
@@ -25,6 +26,7 @@ public class LatinusIDE extends javax.swing.JFrame {
     private PilaFrontend pila = null;
     private ProgContext arbol = null;
     private final TextLineNumber numeros;
+    private final Coloreador coloreador;
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger
             .getLogger(LatinusIDE.class.getName());
@@ -36,6 +38,7 @@ public class LatinusIDE extends javax.swing.JFrame {
         initComponents();
         numeros = new TextLineNumber(editor);
         jScrollPane1.setRowHeaderView(numeros);
+        coloreador = new Coloreador(editor);
     }
 
     /**
@@ -99,7 +102,10 @@ public class LatinusIDE extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_END);
 
+        editor.setBackground(new java.awt.Color(40, 42, 54));
         editor.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        editor.setForeground(new java.awt.Color(169, 183, 198));
+        editor.setCaretColor(new java.awt.Color(255, 255, 255));
         editor.addCaretListener(this::editorCaretUpdate);
         jScrollPane1.setViewportView(editor);
 
@@ -192,7 +198,7 @@ public class LatinusIDE extends javax.swing.JFrame {
         var parser = new CodexLatinusParser(tokens);
         arbol = parser.prog();
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem astVista;
     private javax.swing.JLabel columna;

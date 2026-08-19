@@ -50,6 +50,7 @@ public interface NoTerminales {
     String UNARIO = "Unario";
     String VALOR = "Valor";
     String VALOR_S = "ValStruct";
+    String VALOR_D = "ValorDecla";
     String VARIABLES = "Varibles";
     String V_GLOBAL = "VGlobal";
 }

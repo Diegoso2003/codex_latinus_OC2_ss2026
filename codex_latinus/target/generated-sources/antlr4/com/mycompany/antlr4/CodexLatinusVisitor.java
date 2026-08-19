@@ -79,6 +79,18 @@ public interface CodexLatinusVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitArreglo(CodexLatinusParser.ArregloContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link CodexLatinusParser#valor_d}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitValor_d(CodexLatinusParser.Valor_dContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link CodexLatinusParser#comple}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComple(CodexLatinusParser.CompleContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link CodexLatinusParser#condi}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -126,12 +138,6 @@ public interface CodexLatinusVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitCicloP(CodexLatinusParser.CicloPContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link CodexLatinusParser#comple}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitComple(CodexLatinusParser.CompleContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CodexLatinusParser#inst}.
 	 * @param ctx the parse tree

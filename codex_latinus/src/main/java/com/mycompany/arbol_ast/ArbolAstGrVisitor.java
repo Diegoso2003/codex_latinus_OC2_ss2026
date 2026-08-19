@@ -1,5 +1,6 @@
 package com.mycompany.arbol_ast;
 
+import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 import com.mycompany.antlr4.CodexLatinusBaseVisitor;
@@ -55,6 +56,7 @@ import com.mycompany.antlr4.CodexLatinusParser.TipoContext;
 import com.mycompany.antlr4.CodexLatinusParser.UnarioContext;
 import com.mycompany.antlr4.CodexLatinusParser.ValContext;
 import com.mycompany.antlr4.CodexLatinusParser.ValorContext;
+import com.mycompany.antlr4.CodexLatinusParser.Valor_dContext;
 import com.mycompany.antlr4.CodexLatinusParser.Var_gloContext;
 import com.mycompany.antlr4.CodexLatinusParser.VariablesContext;
 import com.mycompany.constantes.NoTerminales;
@@ -68,11 +70,7 @@ public class ArbolAstGrVisitor extends CodexLatinusBaseVisitor<Integer> {
 
     @Override
     public Integer visitProg(ProgContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.PROG);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.PROG);
     }
 
     @Override
@@ -101,20 +99,12 @@ public class ArbolAstGrVisitor extends CodexLatinusBaseVisitor<Integer> {
 
     @Override
     public Integer visitDecl(DeclContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.DECLA);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.DECLA);
     }
 
     @Override
     public Integer visitFuncts(FunctsContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.FUNCTS);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.FUNCTS);
     }
 
     @Override
@@ -134,20 +124,12 @@ public class ArbolAstGrVisitor extends CodexLatinusBaseVisitor<Integer> {
 
     @Override
     public Integer visitMet(MetContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.SUB_RUTINA);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.SUB_RUTINA);
     }
 
     @Override
     public Integer visitMain(MainContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.MAIN);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.MAIN);
     }
 
     @Override
@@ -167,119 +149,67 @@ public class ArbolAstGrVisitor extends CodexLatinusBaseVisitor<Integer> {
 
     @Override
     public Integer visitPrimitivo(PrimitivoContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.DECLA_S);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.DECLA_S);
     }
 
     @Override
     public Integer visitArreglo(ArregloContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.DECLA_A);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.DECLA_A);
     }
 
     @Override
     public Integer visitCondi(CondiContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.CONDI);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.CONDI);
     }
 
     @Override
     public Integer visitSino(SinoContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.SINO);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.SINO);
     }
 
     @Override
     public Integer visitDefault(DefaultContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.DEFAULT);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.DEFAULT);
     }
 
     @Override
     public Integer visitCicloS(CicloSContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.CICLO_S);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.CICLO_S);
     }
 
     @Override
     public Integer visitParen_expr(Paren_exprContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.PAREN_EXPR);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.PAREN_EXPR);
     }
 
     @Override
     public Integer visitBloque(BloqueContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.BLOQUE);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.BLOQUE);
     }
 
     @Override
     public Integer visitCicloD(CicloDContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.CICLO_D);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.CICLO_D);
     }
 
     @Override
     public Integer visitCicloP(CicloPContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.CICLO_P);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.CICLO_P);
     }
 
     @Override
     public Integer visitComple(CompleContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.COM_VALOR);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.COM_VALOR);
     }
 
     @Override
     public Integer visitInst(InstContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.INST);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.INST);
     }
 
     @Override
     public Integer visitImpri(ImpriContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.IMPRI);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.IMPRI);
     }
 
     @Override
@@ -299,74 +229,42 @@ public class ArbolAstGrVisitor extends CodexLatinusBaseVisitor<Integer> {
 
     @Override
     public Integer visitLectura(LecturaContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.LECT);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.LECT);
     }
 
     @Override
     public Integer visitAsign(AsignContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.ASIGN);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.ASIGN);
     }
 
     @Override
     public Integer visitMetodo(MetodoContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.METODO);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.METODO);
     }
 
     @Override
     public Integer visitFuncion(FuncionContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.FUNC);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.FUNC);
     }
 
     @Override
     public Integer visitValor(ValorContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.VALOR);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.VALOR);
     }
 
     @Override
     public Integer visitC_met(C_metContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.C_METOD);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.C_METOD);
     }
 
     @Override
     public Integer visitVariables(VariablesContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.VARIABLES);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.VARIABLES);
     }
 
     @Override
     public Integer visitDeclStru(DeclStruContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.STRUCT_V);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.STRUCT_V);
     }
 
     @Override
@@ -389,38 +287,22 @@ public class ArbolAstGrVisitor extends CodexLatinusBaseVisitor<Integer> {
 
     @Override
     public Integer visitVal(ValContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.VALOR_S);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.VALOR_S);
     }
 
     @Override
     public Integer visitStruct(StructContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.STRUCT);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.STRUCT);
     }
 
     @Override
     public Integer visitAtrib(AtribContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.ATRIB);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.ATRIB);
     }
 
     @Override
     public Integer visitAtrib_pcoma(Atrib_pcomaContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.ATRIB);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.ATRIB);
     }
 
     @Override
@@ -476,11 +358,7 @@ public class ArbolAstGrVisitor extends CodexLatinusBaseVisitor<Integer> {
 
     @Override
     public Integer visitLista(ListaContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.ARREGLO);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.ARREGLO);
     }
 
     @Override
@@ -488,20 +366,12 @@ public class ArbolAstGrVisitor extends CodexLatinusBaseVisitor<Integer> {
         if (ctx.getChildCount() == 1) {
             return ctx.getChild(0).accept(this);
         }
-        int nodo = g.agregarNodo(NoTerminales.EXPR);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.EXPR);
     }
 
     @Override
     public Integer visitTipo(TipoContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.TIPO);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.TIPO);
     }
 
     @Override
@@ -509,11 +379,7 @@ public class ArbolAstGrVisitor extends CodexLatinusBaseVisitor<Integer> {
         if (ctx.getChildCount() == 1) {
             return ctx.getChild(0).accept(this);
         }
-        int nodo = g.agregarNodo(NoTerminales.EXPR);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.EXPR);
     }
 
     @Override
@@ -521,11 +387,7 @@ public class ArbolAstGrVisitor extends CodexLatinusBaseVisitor<Integer> {
         if (ctx.getChildCount() == 1) {
             return ctx.getChild(0).accept(this);
         }
-        int nodo = g.agregarNodo(NoTerminales.EXPR);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.EXPR);
     }
 
     @Override
@@ -533,11 +395,7 @@ public class ArbolAstGrVisitor extends CodexLatinusBaseVisitor<Integer> {
         if (ctx.getChildCount() == 1) {
             return ctx.getChild(0).accept(this);
         }
-        int nodo = g.agregarNodo(NoTerminales.EXPR);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.EXPR);
     }
 
     @Override
@@ -545,11 +403,7 @@ public class ArbolAstGrVisitor extends CodexLatinusBaseVisitor<Integer> {
         if (ctx.getChildCount() == 1) {
             return ctx.getChild(0).accept(this);
         }
-        int nodo = g.agregarNodo(NoTerminales.EXPR);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.EXPR);
     }
 
     @Override
@@ -557,20 +411,12 @@ public class ArbolAstGrVisitor extends CodexLatinusBaseVisitor<Integer> {
         if (ctx.getChildCount() == 1) {
             return ctx.getChild(0).accept(this);
         }
-        int nodo = g.agregarNodo(NoTerminales.EXPR);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.EXPR);
     }
 
     @Override
     public Integer visitTerm(TermContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.EXPR);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.EXPR);
     }
 
     @Override
@@ -578,43 +424,36 @@ public class ArbolAstGrVisitor extends CodexLatinusBaseVisitor<Integer> {
         if (ctx.getChildCount() == 1) {
             return ctx.getChild(0).accept(this);
         }
-        int nodo = g.agregarNodo(NoTerminales.EXPR);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.EXPR);
     }
 
     @Override
     public Integer visitAccess_a(Access_aContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.ACCESS_A);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.ACCESS_A);
     }
 
     @Override
     public Integer visitC_identi(C_identiContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.C_IDENTI);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.C_IDENTI);
     }
 
     @Override
     public Integer visitIdenti(IdentiContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.IDENTI);
-        for (int i = 0; i < ctx.getChildCount(); i++) {
-            g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
-        }
-        return nodo;
+        return agregarNodo(ctx, NoTerminales.IDENTI);
     }
 
     @Override
     public Integer visitLl_func(Ll_funcContext ctx) {
-        int nodo = g.agregarNodo(NoTerminales.LLAMETOD);
+        return agregarNodo(ctx, NoTerminales.LLAMETOD);
+    }
+
+    @Override
+    public Integer visitValor_d(Valor_dContext ctx) {
+        return agregarNodo(ctx, NoTerminales.VALOR_D);
+    }
+
+    private Integer agregarNodo(ParserRuleContext ctx, String nombre) {
+        int nodo = g.agregarNodo(nombre);
         for (int i = 0; i < ctx.getChildCount(); i++) {
             g.agregarRelacion(nodo, ctx.getChild(i).accept(this));
         }

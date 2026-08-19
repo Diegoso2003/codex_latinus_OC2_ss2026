@@ -60,6 +60,7 @@ import com.mycompany.antlr4.CodexLatinusParser.TipoContext;
 import com.mycompany.antlr4.CodexLatinusParser.UnarioContext;
 import com.mycompany.antlr4.CodexLatinusParser.ValContext;
 import com.mycompany.antlr4.CodexLatinusParser.ValorContext;
+import com.mycompany.antlr4.CodexLatinusParser.Valor_dContext;
 import com.mycompany.antlr4.CodexLatinusParser.Var_gloContext;
 import com.mycompany.antlr4.CodexLatinusParser.VariablesContext;
 import com.mycompany.constantes.NoTerminales;
@@ -403,6 +404,11 @@ public class PilaListener extends CodexLatinusBaseListener {
     @Override
     public void exitParen_expr(Paren_exprContext ctx) {
         agregarALaPila(NoTerminales.PAREN_EXPR, ctx.getChildCount());
+    }
+
+    @Override
+    public void exitValor_d(Valor_dContext ctx) {
+        agregarALaPila(NoTerminales.VALOR_D, ctx.getChildCount());
     }
 
     private void agregarALaPila(String simbolo, int hijos) {

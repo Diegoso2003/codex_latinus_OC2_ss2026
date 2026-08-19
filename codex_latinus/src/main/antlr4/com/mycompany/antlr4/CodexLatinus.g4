@@ -91,9 +91,18 @@ main : MAI MAY l_inst
 l_inst : inst+
     ;
 
-declS : ES ID DPUN tipo comple?                     #primitivo
-    | SR ID access_a DPUN tipo lista PCO      #arreglo
+declS : ES ID DPUN valor_d                    #primitivo
+    | SR ID access_a DPUN tipo lista? PCO      #arreglo
     ;
+
+valor_d : tipo comple
+    | VERUM
+    | FALSUS
+    ;
+
+comple : expr PCO
+| declStru
+;
 
 condi : SI paren_expr bloque sino
     ;
@@ -119,11 +128,6 @@ cicloD : FC bloque DUM paren_expr PCO
     ;
 
 cicloP : PER PAA declS expr PCO asign PAC bloque
-    ;
-
-comple : expr PCO
-    | PCO
-    | declStru
     ;
 
 inst : cicloS

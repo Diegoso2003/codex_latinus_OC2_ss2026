@@ -149,6 +149,30 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterValor_d(CodexLatinusParser.Valor_dContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitValor_d(CodexLatinusParser.Valor_dContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterComple(CodexLatinusParser.CompleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitComple(CodexLatinusParser.CompleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterCondi(CodexLatinusParser.CondiContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -240,18 +264,6 @@ public class CodexLatinusBaseListener implements CodexLatinusListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCicloP(CodexLatinusParser.CicloPContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterComple(CodexLatinusParser.CompleContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitComple(CodexLatinusParser.CompleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

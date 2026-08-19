@@ -122,6 +122,26 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 */
 	void exitArreglo(CodexLatinusParser.ArregloContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CodexLatinusParser#valor_d}.
+	 * @param ctx the parse tree
+	 */
+	void enterValor_d(CodexLatinusParser.Valor_dContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CodexLatinusParser#valor_d}.
+	 * @param ctx the parse tree
+	 */
+	void exitValor_d(CodexLatinusParser.Valor_dContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CodexLatinusParser#comple}.
+	 * @param ctx the parse tree
+	 */
+	void enterComple(CodexLatinusParser.CompleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CodexLatinusParser#comple}.
+	 * @param ctx the parse tree
+	 */
+	void exitComple(CodexLatinusParser.CompleContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CodexLatinusParser#condi}.
 	 * @param ctx the parse tree
 	 */
@@ -201,16 +221,6 @@ public interface CodexLatinusListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCicloP(CodexLatinusParser.CicloPContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link CodexLatinusParser#comple}.
-	 * @param ctx the parse tree
-	 */
-	void enterComple(CodexLatinusParser.CompleContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CodexLatinusParser#comple}.
-	 * @param ctx the parse tree
-	 */
-	void exitComple(CodexLatinusParser.CompleContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CodexLatinusParser#inst}.
 	 * @param ctx the parse tree
